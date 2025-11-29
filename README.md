@@ -8,7 +8,7 @@ which is called linear regression model; $w$ is the parameters vector and $b$ is
 # Derivatives of loss fucntion
 $$
 \frac{dL}{dw} = \frac{1}{m} ( (\frac{d}{dw} (Xw+b-y))^\top (Xw+b-y) + (Xw+b-y)^\top \frac{d}{dw}(Xw+b-y)) + \lambda ( (\frac{d}{dw} w)^\top w + w^\top \frac{d}{dw} w) = 
-\frac{1}{m} (X^\top (Xw+b-y) + (Xw+b-y)^\top X) + \lambda (2w)) = \frac{1}{m} (X^\top (Xw+b-y) + X^\top (Xw+b-y)) + \lambda (2w)) = \frac{1}{m} (2X^\top (Xw+b-y) + 2 \lambda)
+\frac{1}{m} (X^\top (Xw+b-y) + (Xw+b-y)^\top X) + \lambda (2w)) = \frac{1}{m} (X^\top (Xw+b-y) + X^\top (Xw+b-y)) + \lambda (2w)) = \frac{1}{m} (2X^\top (Xw+b-y) + 2 \lambda w)
 $$
 
 $$
