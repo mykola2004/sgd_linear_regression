@@ -9,7 +9,7 @@ Then our task is to find the best in some sense suitable for our dataset weights
 
 Naturally, we would want to minimize $L$, which we could do analytically by writing out the derivative of $L$ with respect to $w$ and then finding roots of that derivative, and checking whether in the found root the Hesian of $L$ is positively definite. 
 
-But, there is also an iterative method to find the minimum of the $L$ - stochastic gradient descent. The idea of which is to consequently update all parameters of the model in the direction of antigradient (as it points in the direction of steepest descent of a function): $w^{(t+1)} = w^{(t)} - \alpha \frac{dL}{dw}$, $b^{(t+1)} = b^{(t)} - \alpha \frac{dL}{db}$, where $t$ - is the number of the iteration. The algorithm stops when the maximum number of iterations is reached or the update term became to small (in the project I will be checking the norm of update vector only for weights $w$).
+But, there is also an iterative method to find the minimum of the $L$ - stochastic gradient descent. The idea of which is to consequently update all parameters of the model in the direction of antigradient (as it points in the direction of steepest descent of a function): $w^{(t+1)} = w^{(t)} - \alpha \frac{dL}{dw}$, $b^{(t+1)} = b^{(t)} - \alpha \frac{dL}{db}$, where $t$ - is the number of the iteration. The algorithm stops when the maximum number of iterations is reached or the update term becomes too small (in the project I will be checking the norm of update vector only for weights $w$).
 
 # Derivatives of loss fucntion with respect to parameters
 $$
@@ -19,10 +19,11 @@ $$
 
 $$
 \frac{dL}{db} = \frac{1}{m} ( (\frac{d}{db} (Xw+b-y))^\top (Xw+b-y) + (Xw+b-y)^\top \frac{d}{db}(Xw+b-y)) = 
-\frac{2}{m} (Xw+b-y)
+\frac{2}{m} \sum_{1}^{m}(Xw+b-y)
 $$ 
 
 # Batch gradient descent
+Weights can be updated after processing smaller part of a dataset - called mini-batch. This increases the amount of updates applied to the parameters, speeding up learning process. In practice at the beginning of each epoch the dataset is shuffled (this part is skipped in my implementation), then it is divided into subsequent mini-batches of size $k$ ($$ 1 <= k = <m $$), the updates for the weights are performed consequnetly for each of the extracted mini-batches.
 
 # Testing of the algorithm 
 In the test.ipynb file I have applied the model to the synthetic dataset. Can be seen that the algorithm found optimal weights correctly by comparing found coeficients and the real coefficients in the functional dependency between indepedent features and the dependent one.
