@@ -25,7 +25,7 @@ $$
 $$ 
 
 # Batch gradient descent
-Weights can be updated after processing smaller part of a dataset - called mini-batch. This increases the amount of updates applied to the parameters, speeding up learning process. In practice at the beginning of each epoch the dataset is shuffled (this part is skipped in my implementation), then it is divided into subsequent mini-batches of size $k$ ($$ 1 <= k = <m $$), the updates for the weights are performed consequnetly for each of the extracted mini-batches.
+Weights can be updated after processing smaller part of a dataset - called mini-batch. This increases the amount of updates applied to the parameters, speeding up learning process. In practice at the beginning of each epoch the dataset is shuffled (this part is skipped in my implementation), then it is divided into subsequent mini-batches of size $k$ ($1 <= k = <m$), the updates for the weights are performed consequnetly for each of the extracted mini-batches.
 
 # Testing of the algorithm 
 In the test.ipynb file I have applied the model to the synthetic dataset. Can be seen that the algorithm found optimal weights correctly by comparing found coeficients and the real coefficients in the functional dependency between indepedent features and the dependent one.
