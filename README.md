@@ -5,7 +5,7 @@ The goal of the project is to program the stochastic gradient descent algorithm 
 Let's say we have a data set with independent features $X_1, X_2, ... , X_n$ and the dependent feature $Y$. And we assume that the dependency between independent features and the dependent is given by this model: $$Y = (X_1, X_2, ..., X_n) \boldsymbol{\cdot} \boldsymbol{\omega} + b$$ ,
 which is called linear regression model; where $\omega \in \mathbb{R^{n}}$ is the weights vector and $b \in \mathbb{R}$ is the bias term. 
 
-Then our task is to find the best in some sense suitable for our dataset set of weights $w$ and bias $b$ term. To measure how well the model suits the data let's introduce a loss function $$L(\omega, b) = \frac{1}{m}(X\omega+b-y)^\top(X\omega+b-y) + \lambda w^\top w $$, where $m$ - is the number of observations in the dataset; $X$ - is $m$ by $n$ matrix, which $i$-th row corresponds to $i$-th observation. The second term in $L$ is responsible for regularization, which helps when multicolinearity exists between independent features; regularization forces the weights vector to become smaller (how small it would be depends on the value of $\lambda$ - regularization parameter). $L$ measures overall squared error that the model makes on each observation of our data set. 
+Then our task is to find the best in some sense suitable for our dataset set of weights $w$ and bias $b$ term. To measure how well the model suits the data let's introduce a loss function $$L(\omega, b) = \frac{1}{m}(X\omega+b-y)^\top(X\omega+b-y) + \lambda \omega^\top \omega $$, where $m$ - is the number of observations in the dataset; $X$ - is $m$ by $n$ matrix, which $i$-th row corresponds to $i$-th observation. The second term in $L$ is responsible for regularization, which helps when multicolinearity exists between independent features; regularization forces the weights vector to become smaller (how small it would be depends on the value of $\lambda$ - regularization parameter). $L$ measures overall squared error that the model makes on each observation of our data set. 
 
 Naturally, we want to minimize $L$, which we could do analytically by writing out the derivative of $L$ with respect to $w$ and then finding roots of that derivative, and then checking whether in the found root the Hesian of $L$ is positively definite. 
 
@@ -15,7 +15,7 @@ In the next section, will be derived the gradients of the cost function with res
 
 # Derivatives of loss function with respect to parameters $\omega$ and $b$
 $$
-\frac{dL}{d\omega} = \frac{1}{\omega} ( (\frac{d}{dw} (Xw+b-y))^\top (Xw+b-y) + (Xw+b-y)^\top \frac{d}{dw}(Xw+b-y)) + \lambda ( (\frac{d}{dw} w)^\top w + w^\top \frac{d}{dw} w) = 
+\frac{dL}{d\omega} = \frac{1}{\omega} ( (\frac{d}{d\omega} (X\omega+b-y))^\top (X\omega+b-y) + (X\omega+b-y)^\top \frac{d}{d\omega}(X\omega+b-y)) + \lambda ( (\frac{d}{d\omega} \omega)^\top \omega + \omega^\top \frac{d}{d\omega} \omega) = 
 \frac{1}{\omega} (X^\top (X\omega+b-y) + (X\omega+b-y)^\top X) + \lambda (2\omega)) = \frac{1}{\omega} (X^\top (X\omega+b-y) + X^\top (X\omega+b-y)) + \lambda (2\omega)) = \frac{1}{m} (2X^\top (X\omega+b-y) + 2 \lambda \omega)
 $$
 
