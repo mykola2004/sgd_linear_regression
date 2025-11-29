@@ -2,7 +2,7 @@
 The goal of the project is to program the gradient descent algorithm for linear regression model.
 
 # Gradient descent for linear regression
-Let's say we have a data set with independent features $x_1, x2, ... , x_n$ and dependent feature $y$. And we assume that the dependency between independent features and dependent is given by this model: $$y = \bold_symbol{x} \cdot \bold_symbol{w} + b$% ,
+Let's say we have a data set with independent features $x_1, x2, ... , x_n$ and dependent feature $y$. And we assume that the dependency between independent features and dependent is given by this model: $$y = \bold_symbol{x} \cdot \bold_symbol{w} + b$$ ,
 which is called linear regression model. 
 Then our task is to find the best in some sense suitable for our dataset weights $w$. To measure how well the model suits the data let's introduce the loss function
 \[ 
