@@ -22,5 +22,7 @@ $$
 \frac{2}{m} (Xw+b-y)
 $$
 
+# Batch gradient descent
+
 # Testing of the algorithm 
-In the test.ipynb file I have applied the model to the synthetic dataset. Eventually, the algorithm found the correct approximates for coefficients of independent variables. 
+In the test.ipynb file I have applied the model to the synthetic dataset. Can be seen that the algorithm found optimal weights correctly by comparing found coeficients and the real coefficients in the functional dependency between indepedent features and the dependent one.
