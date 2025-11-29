@@ -11,7 +11,7 @@ Naturally, we would want to minimize $L$, which we could do analytically by writ
 
 But, there is also an iterative method to find the minimum of the $L$ - stochastic gradient descent. The idea of which is to consequently update all parameters of the model in the direction of antigradient (as it points in the direction of steepest descent of a function): $w^{(t+1)} = w^{(t)} - \alpha \frac{dL}{dw}$, $b^{(t+1)} = b^{(t)} - \alpha \frac{dL}{db}$, where $t$ - is the number of the iteration. The algorithm stops when the maximum number of iterations is reached or the update term became to small (in the project I will be checking the norm of update vector only for weights $w$).
 
-# Derivatives of loss fucntion
+# Derivatives of loss fucntion with respect to parameters
 $$
 \frac{dL}{dw} = \frac{1}{m} ( (\frac{d}{dw} (Xw+b-y))^\top (Xw+b-y) + (Xw+b-y)^\top \frac{d}{dw}(Xw+b-y)) + \lambda ( (\frac{d}{dw} w)^\top w + w^\top \frac{d}{dw} w) = 
 \frac{1}{m} (X^\top (Xw+b-y) + (Xw+b-y)^\top X) + \lambda (2w)) = \frac{1}{m} (X^\top (Xw+b-y) + X^\top (Xw+b-y)) + \lambda (2w)) = \frac{1}{m} (2X^\top (Xw+b-y) + 2 \lambda w)
@@ -20,7 +20,7 @@ $$
 $$
 \frac{dL}{db} = \frac{1}{m} ( (\frac{d}{db} (Xw+b-y))^\top (Xw+b-y) + (Xw+b-y)^\top \frac{d}{db}(Xw+b-y)) = 
 \frac{2}{m} (Xw+b-y)
-$$
+$$ 
 
 # Batch gradient descent
 
