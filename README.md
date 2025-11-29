@@ -9,7 +9,9 @@ Then our task is to find the best in some sense suitable for our dataset weights
 
 Naturally, we would want to minimize $L$, which we could do analytically by writing out the derivative of $L$ with respect to $w$ and then finding roots of that derivative, and checking whether in the found root the Hesian of $L$ is positively definite. 
 
-But, there is also an iterative method to find the minimum of the $L$ - stochastic gradient descent. The idea of which is to consequently update all parameters of the model in the direction of antigradient (as it points in the direction of steepest descent of a function): $w^{(t+1)} = w^{(t)} - \alpha \frac{dL}{dw}$, $b^{(t+1)} = b^{(t)} - \alpha \frac{dL}{db}$, where $t$ - is the number of the iteration. The algorithm stops when the maximum number of iterations is reached or the update term becomes too small (in the project I will be checking the norm of update vector only for weights $w$).
+But, there is also an iterative method to find the minimum of the $L$ - stochastic gradient descent. The idea of which is to consequently update all parameters of the model in the direction of antigradient (as it points in the direction of steepest descent of a function): $w^{(t+1)} = w^{(t)} - \alpha \frac{dL}{dw}$, $b^{(t+1)} = b^{(t)} - \alpha \frac{dL}{db}$, where $t$ - is the number of the iteration, $\alpha$ - is learning rate, which determines the size of step in the direction of antigradient. The algorithm stops when the maximum number of iterations is reached or the update term becomes too small (in the project I will be checking the norm of update vector only for weights $w$).
+
+In the next section, will be derived the gradients of the cost function with respect to parameters of linear regression model.
 
 # Derivatives of loss fucntion with respect to parameters
 $$
