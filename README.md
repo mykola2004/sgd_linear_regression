@@ -13,7 +13,7 @@ $$
 
 $$
 \frac{dL}{db} = \frac{1}{m} ( (\frac{d}{db} (Xw+b-y))^\top (Xw+b-y) + (Xw+b-y)^\top \frac{d}{db}(Xw+b-y)) = 
-\frac{1}{m} (X^\top (Xw+b-y) + (Xw+b-y)^\top X
+\frac{2}{m} (Xw+b-y)
 $$
 
 # Testing of the algorithm 
